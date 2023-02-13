@@ -1,5 +1,6 @@
 import React from "react";
 import '../styles/button-dowload.css'
+import cv from '../documents/CV_Noe_Hernandez.pdf'
 
 const ButtonDowload = () => {
   return (
@@ -24,7 +25,7 @@ const ButtonDowload = () => {
         </svg>{" "}
         Descargar CV
       </div>
-      <div className="download bg-secondary dark:bg-primary">
+      <a href={cv} download='' className="download bg-secondary dark:bg-primary">
         <svg
           className="css-i6dzq1"
           strokeLinejoin="round"
@@ -40,7 +41,7 @@ const ButtonDowload = () => {
           <polyline points="7 10 12 15 17 10"></polyline>
           <line y2="3" x2="12" y1="15" x1="12"></line>
         </svg>
-      </div>
+      </a>
     </button>
   );
 };

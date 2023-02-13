@@ -22,6 +22,7 @@ import { useWindowSize } from "react-use";
 import MoreProyects from "./components/MoreProyects";
 import { quotesList } from "../quotes"
 
+
 // No se hizo en un archivo aparte, porque habia problemas al colocar 
 // los colores de tailwind y se bugeaba siempre al actualizar el archivo config
 const skills = [
