@@ -245,7 +245,7 @@ function App() {
         <section className="section " id="skills">
           <h2 className="title">Habilidades</h2>
 
-          <div className="flex flex-col gap-7 justify-center items-center w-4/5 mx-auto sm:w-2/3 xl:w-2/4">
+          <div className="flex flex-col gap-10 justify-center items-center w-4/5 mx-auto sm:w-2/3 xl:w-2/4">
             <div className="grid grid-col-1 grid-rows-4 gap-7  lg:grid lg:grid-cols-2 lg:grid-rows-3 lg:gap-12 ">
               {currentSkills.map((skill) => (
                 <ItemSkill
