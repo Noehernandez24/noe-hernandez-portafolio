@@ -1,8 +1,4 @@
-import React from "react";
-import iconGithub from "../assets/svg/icon-github.svg";
-import iconLinkedin from "../assets/svg/icon-Linkedin.svg";
-import iconTwitter from "../assets/svg/icon-twitter.svg";
-import Iconmail from "../assets/svg/icon-mail.svg";
+import React from "react"
 
 const SocialNavigate = () => {
   return (
