@@ -247,7 +247,7 @@ function App() {
 
           <div className="flex gap-7 justify-center items-center w-4/5 mx-auto sm:w-2/3 xl:w-2/4">
             <div className="grid grid-col-1 grid-rows-4 gap-7  lg:grid lg:grid-cols-2 lg:grid-rows-3 lg:gap-12 ">
-              {currentSkills.map((skill, index) => (
+              {currentSkills.map((skill) => (
                 <ItemSkill
                   key={skill.id}
                   icon={skill.icon}
