@@ -342,10 +342,21 @@ function App() {
 
       <footer className="h-20 bg-footer flex justify-center items-center lg:hidden">
         <div className="footer-social flex gap-6">
-          <img className="w-10" src={iconGithub} alt="" />
-          <img className="w-10" src={iconLinkedin} alt="" />
-          <img className="w-10" src={iconTwitter} alt="" />
-          <img className="w-10" src={Iconmail} alt="" />
+        <a href="https://www.linkedin.com/in/noe-hdz-dev/" target="_blank">
+        <i className='bx bxl-linkedin bx-md text-white dark:text-black bg-black dark:bg-white hover:bg-secondary dark:hover:bg-primary rounded-lg p-1'></i>
+        </a>
+        
+        <a href="https://github.com/Noehernandez24" target="_blank">
+        <i className='bx bxl-github bx-md text-white dark:text-black bg-black dark:bg-white hover:bg-secondary dark:hover:bg-primary rounded-lg p-1' ></i>
+        </a>
+
+        <a href="https://twitter.com/NoeHernandev" target="_blank">
+        <i className='bx bxl-twitter bx-md text-white dark:text-black bg-black dark:bg-white hover:bg-secondary dark:hover:bg-primary rounded-lg p-1' ></i>
+        </a>
+
+        <a href="mailto:noe.hernandez.dev@gmail.com" target="_blank">
+        <i className='bx bxs-envelope bx-md text-white dark:text-black bg-black dark:bg-white hover:bg-secondary dark:hover:bg-primary rounded-lg p-1' ></i>
+        </a>
         </div>
       </footer>
     </main>
