@@ -13,8 +13,6 @@ const NavBar = () => {
 
 
 
-  console.log('hola')
-
     return (
         <nav className={`py-7 px-10 flex tracking-widest items-center justify-center sm:justify-center gap-10 lg:py-16 lg:justify-between relative`} id='home'>
 

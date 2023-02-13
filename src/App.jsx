@@ -13,7 +13,7 @@ import proyecto3 from "./assets/images/proyecto-3.png";
 import proyecto4 from "./assets/images/proyecto-4.png";
 import proyecto5 from "./assets/images/proyecto-5.png";
 import iconGithub from "./assets/svg/icon-github.svg";
-import iconLinkedin from "./assets/svg/icon-Linkedin.svg";
+import iconLinkedin from "./assets/svg/icon-linkedin.svg";
 import iconTwitter from "./assets/svg/icon-twitter.svg";
 import Iconmail from "./assets/svg/icon-mail.svg";
 import ButtonDowload from "./components/ButtonDowload";
