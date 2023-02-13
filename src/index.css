@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply scroll-smooth;
+}
+
+body {
+  @apply font-plex bg-ligth dark:bg-body text-slate-900 dark:text-white ;
+}
+
+img {
+  @apply max-w-full;
+}
+
+.title {
+  @apply text-center text-2xl font-title text-secondary dark:text-primary uppercase sm:text-3xl;
+}
+
+.section {
+  @apply min-h-screen flex flex-col gap-16 justify-center px-3 relative;
+}
+
+.education-logo {
+  left: calc(50% - 20px);
+}
+
+.home {
+  min-height: calc(100vh - 159px); 
+}
+
+.index-navigate {
+  top: calc(50% - 90px);
+}
+
+.social-nav {
+  top: calc(50% - 116px);
+}
+
+.arrow-down {
+  top: calc(50% - 18px);
+}
+
