@@ -12,7 +12,7 @@ const ItemSkill = ({color, icon, title, isHidden}) => {
       </div>
 
       <div className="h-6 w-44 sm:w-44  rounded-lg border-2 border-black dark:border-white">
-        <div className={`div h-full w-2/4 ${color} rounded-lg`}></div>
+        <div className={`div h-full w-full ${color} rounded-lg`}></div>
         <h2 className="text-center py-3 lg:text-lg">{title}</h2>
       </div>
     </div>
