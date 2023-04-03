@@ -23,6 +23,8 @@ module.exports = {
         'html': '#f06529',
         'git': '#F05032',
         'overlay': '#00000099',
+        'nodejs': '#339933',
+        'postgres': '#336791'
       },
     },
     fontFamily: {

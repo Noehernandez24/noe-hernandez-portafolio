@@ -12,6 +12,7 @@ import proyecto2 from "./assets/images/proyecto-2.png";
 import proyecto3 from "./assets/images/proyecto-3.png";
 import proyecto4 from "./assets/images/proyecto-4.png";
 import proyecto5 from "./assets/images/proyecto-5.png";
+import node from './assets/images/node.jpg'
 import ButtonDowload from "./components/ButtonDowload";
 import IndexNavigate from "./components/IndexNavigate";
 import SocialNavigate from "./components/SocialNavigate";
@@ -40,37 +41,43 @@ const skills = [
   },
   {
     id: 3,
+    name: "PostgreSQL",
+    icon: "bx bxl-postgresql",
+    color: "bg-postgres",
+  },
+  {
+    id: 4,
+    name: "Node JS",
+    icon: "bx bxl-nodejs",
+    color: "bg-nodejs",
+  },
+  {
+    id: 5,
     name: "Redux",
     icon: "bx bxl-redux",
     color: "bg-redux",
   },
   {
-    id: 4,
-    name: "React Router Dom",
-    icon: "bx bx-folder-open",
-    color: "bg-react-router",
-  },
-  {
-    id: 5,
+    id: 6,
     name: "Tailwind CSS",
     icon: "bx bxl-tailwind-css",
     color: "bg-tailwind",
   },
   {
-    id: 6,
+    id: 7,
     name: "Bootstrap",
     icon: "bx bxl-bootstrap",
     color: "bg-bootstrap",
     isHiden: true
   },
   {
-    id: 7,
+    id: 8,
     name: "HTML5",
     icon: "bx bxl-html5",
     color: "bg-html",
   },
   {
-    id: 8,
+    id: 9,
     name: "CSS3",
     icon: "bx bxl-css3",
     color: "bg-css",
@@ -81,6 +88,12 @@ const skills = [
     icon: "bx bxl-git",
     color: "bg-git",
   },
+  {
+    id: 11,
+    name: "React Router Dom",
+    icon: "bx bx-folder-open",
+    color: "bg-react-router",
+  },
 ];
 
 const proyectsList = [
@@ -89,37 +102,65 @@ const proyectsList = [
     image: proyecto1,
     title: "Pokedex",
     description: 'Una aplicación hecha con React JS, en la que puedes consultar la información de tus pokemones favoritos!',
-    url: 'https://pokedex-w-react.netlify.app/#/pokemons'
+    url: 'https://pokedex-w-react.netlify.app/#/pokemons',
+    side: 'frontend'
   },
   {
     id: 2,
     image: proyecto2,
     title: 'Rick & Morty',
     description: 'Una aplicación hecha con React JS que nos permite consultar acerca de los Universos de la serie Rick and Morty!',
-    url: 'https://cool-salmiakki-ab62f9.netlify.app/'
+    url: 'https://cool-salmiakki-ab62f9.netlify.app/',
+    side: 'frontend'
   },
   {
     id: 3,
     image: proyecto3,
     title: 'E-COMMERCE',
     description: 'Una pagina web responsiva que simula la compra de productos de un eccomerce hecho 100% con vanilla JavasScript',
-    url: 'https://sprightly-torte-b42305.netlify.app/'
+    url: 'https://sprightly-torte-b42305.netlify.app/',
+    side: 'frontend'
   },
   {
     id: 4,
     image: proyecto4,
     title: 'DIGITAL STORE',
     description: 'Un eccomerce hecho con React JS, con login en la que puedes comprar multiples dispositivos tecnologicos',
-    url: 'https://digital-store-react.netlify.app/'
+    url: 'https://digital-store-react.netlify.app/',
+    side: 'frontend'
   },
   {
     id: 5,
     image: proyecto5,
     title: 'Easy Clicker',
     description: 'Un juego sencillo de clicker hecho con React, en el puedes retarte a ti mismo a conseguir la mayor cantidad de clicks',
-    url: 'https://easy-clicker.netlify.app/'
-
-  }
+    url: 'https://easy-clicker.netlify.app/',
+    side: 'frontend'
+  },
+  {
+    id: 6,
+    image: node,
+    title: 'Ecommerce Multiclient',
+    description: 'Una api para un ecommerce multicliente donde cualquiera puede vender y comprar!',
+    url: 'https://github.com/Noehernandez24/chatAPI',
+    side: 'backend'
+  },
+  {
+    id: 7,
+    image: node,
+    title: 'ChatAPI',
+    description: 'Una api para un chat en el que distintos usuarios pueden intercambiar mensajes',
+    url: 'https://github.com/Noehernandez24/chatAPI',
+    side: 'backend'
+  },
+  {
+    id: 8,
+    image: node,
+    title: 'TodoAPI',
+    description: 'Una api creada con NODEJS y Express para una un todo de tareas en linea!',
+    url: 'https://github.com/Noehernandez24/todoAPI',
+    side: 'backend'
+  },
 ];
 
 
@@ -194,7 +235,7 @@ function App() {
           {/* HOME TEXTS */}
           <div>
             <h3 className=" text-center uppercase text-3xl lg:w-1/3 lg:mx-auto lg:leading-10">
-              Desarrollador web frontend y futuro programador fullstack!
+              Desarrollador web FULLSTACK con experiencia en React js y node js!
             </h3>
           </div>
 
@@ -223,16 +264,13 @@ function App() {
             <p className="text-lg sm:text-xl lg:leading-8">
               Soy Noé Hernández, tengo 20 años de edad, soy un{" "}
               <strong className="text-secondary  dark:text-primary">
-                desarrollador Frontend
+                desarrollador Full-Stack.
               </strong>{" "}
-              y futuro programador Fullstack. Algunas tecnologías que manejo son
-              Javascript, CSS, HTML y{" "}
-              <strong className="text-secondary  dark:text-primary">
-                React JS
-              </strong>
-              . Soy una persona responsable, con muchas metas y objetivos a
-              alcanzar. Aprendo y creo todos los días, ¡creemos un proyecto
-              juntos!{" "}
+              Algunas tecnologías que manejo son {" "}
+               <strong className="text-secondary  dark:text-primary">React JS</strong>  Node JS, Redux, Postgres, entre otras!{" "}
+              <br />
+              <br />
+              Estoy interesado en trabajar en proyectos desafiantes que me permitan utilizar mis habilidades y conocimientos para crear soluciones innovadoras y satisfacer las necesidades de los usuarios. Si estás buscando a alguien como yo para unir fuerzas en un proyecto, ¡no dudes en contactarme!{" "}
             </p>
           </div>
 
@@ -319,6 +357,7 @@ function App() {
                   title={proyect.title}
                   description={proyect.description}
                   url={proyect.url}
+                  side={proyect.side}
                 />
               ))}
             </div>

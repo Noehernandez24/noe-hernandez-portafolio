@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Proyects = ({image, title, description, tecnologies, url}) => {
+const Proyects = ({image, title, description, side, url}) => {
     return (
       <div className='fade-in-left'>
         <div className=" group image-container w-full max-w-30 relative cursor-grab overflow-hidden">
@@ -11,7 +11,9 @@ const Proyects = ({image, title, description, tecnologies, url}) => {
             <a href={url} target='_blank' className="xl:text-lg uppercase font-bold hover:bg-slate-800 bg-black py-1 px-3 xl:py-2 xl:px-4 cursor-pointer">
                 Ver proyecto
             </a>
+            
           </div>
+          <span className='border border-dashed absolute top-4 -right-3 bg-secondary rounded-md p-1 uppercase dark:bg-black dark:text-primary font-bold rotate-45 text-sm'>{side}</span>
         </div>
       </div>
     );
