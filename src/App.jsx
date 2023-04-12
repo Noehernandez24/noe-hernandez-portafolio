@@ -142,7 +142,7 @@ const proyectsList = [
     image: node,
     title: 'Ecommerce Multiclient',
     description: 'Una api para un ecommerce multicliente donde cualquiera puede vender y comprar!',
-    url: 'https://github.com/Noehernandez24/chatAPI',
+    url: 'https://github.com/Noehernandez24/EcommerceMulticlientAPI',
     side: 'backend'
   },
   {
