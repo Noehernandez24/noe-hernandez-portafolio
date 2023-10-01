@@ -1,6 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import themeIcon from '../assets/svg/icon-bw.svg'
 
+const sections = [
+  {
+    id: 2, 
+    title: 'Sobre mi',
+    href: '#about'
+  },
+  {
+    id: 3, 
+    title: 'Habilidades',
+    href: '#skills'
+  },
+  {
+    id: 4, 
+    title: 'Educación',
+    href: '#education'
+  },
+  {
+    id: 5, 
+    title: 'Proyectos',
+    href: '#proyects'
+  }
+]
+
 const NavBar = () => {
 
   const [togle, setTogle] = useState(false)
@@ -19,7 +42,7 @@ const NavBar = () => {
           <span className='space hidden lg:block'></span>
 
           <div className='flex gap-4 sm:gap-7 sm:text-xl lg:hidden'>
-          <a className='border-b-2 border-secondary dark:border-primary' href="#home">HOME</a>
+          <a className='underline underline-offset-8 decoration-secondary dark:decoration-primary' href="#home">HOME</a>
           <a href="#about">ME</a>
           <a href="#skills">SK</a>
           <a href="#education">ED</a>
@@ -28,11 +51,16 @@ const NavBar = () => {
 
           {/* NAV DESKTOP */}
           <div className='hidden lg:flex lg:gap-12 lg:text-xl lg:uppercase'>
-          <a className='border-b-2 border-secondary dark:border-primary' href="#home">HOME</a>
-          <a href="#about">Sobre mi</a>
-          <a href="#skills">Habilidades</a>
-          <a href="#education">EDUCACION</a>
-          <a href="#proyects">Proyectos</a>
+          <a className=' underline underline-offset-8 decoration-secondary dark:decoration-primary' href="#home">HOME</a>
+            {sections.map(section => (
+              <a
+                className='hover:underline hover:underline-offset-8 hover:decoration-secondary hover:dark:decoration-primary'
+                key={section.id} 
+                href={section.href}
+              >
+                {section.title}
+              </a>
+            ))}
           </div>
 
           <div onClick={changeTheme} className='cursor-pointer lg:absolute lg:right-10 xl:right-28'>
