@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 
-const IndexNavigate = () => {
+const IndexNavigate = ({ setCurrentSection}) => {
     const [indexActive, setIndexActive] = useState(1);
     const IndexValues = [
       {
@@ -62,6 +62,7 @@ const IndexNavigate = () => {
                 key={index}
                 className={`w-5 h-5  border-2 border-black dark:border-white rounded-full cursor-pointer ${indexActive === value.value ? "bg-secondary dark:bg-primary" : ""}`}
                 href={`#${value.section}`}
+                onClick={() => setCurrentSection(value.section)}
                 >
                 </a>
             ))

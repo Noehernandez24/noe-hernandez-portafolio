@@ -3,31 +3,36 @@ import themeIcon from '../assets/svg/icon-bw.svg'
 
 const sections = [
   {
+    id: 1,
+    title: 'Home',
+    href: 'home'
+  },
+  {
     id: 2, 
     title: 'Sobre mi',
-    href: '#about'
+    href: 'about'
   },
   {
     id: 3, 
     title: 'Habilidades',
-    href: '#skills'
+    href: 'skills'
   },
   {
     id: 4, 
     title: 'Educación',
-    href: '#education'
+    href: 'education'
   },
   {
     id: 5, 
     title: 'Proyectos',
-    href: '#proyects'
+    href: 'proyects'
   }
 ]
 
-const NavBar = () => {
-
+const NavBar = ({setCurrentSection, currentSection}) => {
   const [togle, setTogle] = useState(false)
   const togleClass = togle ? 'rotate-180' : 'rotate-0'
+  
 
   const changeTheme = () => {
     setTogle(!togle)
@@ -37,7 +42,7 @@ const NavBar = () => {
 
 
     return (
-        <nav className={`py-7 px-10 flex tracking-widest items-center justify-center sm:justify-center gap-10 lg:py-16 lg:justify-between relative`} id='home'>
+        <nav className={`  top-0 py-7 px-10 flex tracking-widest items-center justify-center sm:justify-center gap-10 lg:py-16 lg:justify-between`} id='home'>
 
           <span className='space hidden lg:block'></span>
 
@@ -51,12 +56,12 @@ const NavBar = () => {
 
           {/* NAV DESKTOP */}
           <div className='hidden lg:flex lg:gap-12 lg:text-xl lg:uppercase'>
-          <a className=' underline underline-offset-8 decoration-secondary dark:decoration-primary' href="#home">HOME</a>
             {sections.map(section => (
               <a
-                className='hover:underline hover:underline-offset-8 hover:decoration-secondary hover:dark:decoration-primary'
+                className={`${currentSection === section.href &&  'underline decoration-secondary dark:decoration-primary'} hover:underline underline-offset-8 hover:decoration-secondary hover:dark:decoration-primary`}
                 key={section.id} 
-                href={section.href}
+                href={`#${section.href}`}
+                onClick={() => setCurrentSection(section.href)}
               >
                 {section.title}
               </a>

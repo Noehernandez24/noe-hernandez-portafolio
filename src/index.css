@@ -6,10 +6,12 @@
 
 html {
   @apply scroll-smooth;
+  @apply overflow-hidden
 }
 
 body {
   @apply font-plex bg-ligth dark:bg-body text-slate-900 dark:text-white ;
+  @apply overflow-hidden
 }
 
 img {
@@ -42,5 +44,18 @@ img {
 
 .arrow-down {
   top: calc(50% - 18px);
+}
+
+
+
+
+@media screen AND (max-width: 1024px) {
+  html {
+    @apply overflow-visible
+  }
+  
+  body {
+    @apply overflow-visible
+  }
 }
 

@@ -22,6 +22,8 @@ import MoreBtn from "./components/MoreBtn";
 import { useWindowSize } from "react-use";
 import MoreProyects from "./components/MoreProyects";
 import { quotesList } from "../quotes"
+import { scroller } from "react-scroll";
+
 
 
 // No se hizo en un archivo aparte, porque habia problemas al colocar 
@@ -125,7 +127,7 @@ const proyectsList = [
     id: 4,
     image: proyecto4,
     title: 'DIGITAL STORE',
-    description: 'Un eccomerce hecho con React JS, con login en la que puedes comprar multiples dispositivos tecnologicos',
+    description: 'Un eccomerce hecho con React JS, con login en la que puedes comprar multiples dispositivos tecnológicos',
     url: 'https://digital-store-react.netlify.app/',
     side: 'frontend'
   },
@@ -163,6 +165,7 @@ const proyectsList = [
   },
 ];
 
+const sectionsIds = ['home','about', 'skills', 'education', 'proyects']
 
 function App() {
   const [loader, setLoader] = useState(true);
@@ -181,9 +184,37 @@ function App() {
   const firstIndexProyects = lastIndexProyects - posPerPageProyects;
   const currentProyects = proyectsList.slice(firstIndexProyects, lastIndexProyects)
   const totalPagesProyects = Math.ceil(proyectsList.length / posPerPageProyects)
-  const randomQuote = quotesList[Math.floor(Math.random() * quotesList.length)]
+  const [scrollDirection, setScrollDirection] = useState(null)
+  const [currentSection, setCurrentSection] = useState('home')
+  const [quote, setQuote] = useState('')
+
+
+
+  const handleWheel = (e) => {
+    const direction = e.deltaY > 0 ? 1 : -1; // Verifica la dirección de la rueda
+    
+    if (direction === 1) {
+      setScrollDirection('down')
+    } else if (direction === -1 ) {
+      setScrollDirection('up')
+    }
+  };
+
+  useEffect(() => { // GET RANDOM QUOTE
+    const randomQuote = quotesList[Math.floor(Math.random() * quotesList.length)]
+    setQuote(randomQuote)
+    window.scrollTo(0, 0)
+  }, [])
   
-  
+  useEffect(() => {
+    // Agrega un evento de rueda para detectar el scroll
+    window.addEventListener('wheel', handleWheel);
+
+    return () => {
+      // Elimina el evento cuando el componente se desmonte
+      window.removeEventListener('wheel', handleWheel);
+    };
+  }, []);
 
   useEffect(() => {
     document.documentElement.classList.add("dark");
@@ -199,6 +230,35 @@ function App() {
       setPosPerPage(6);
     }
   }, [width]);
+
+  useEffect(() => {
+    if(!scrollDirection) return
+    let timer
+    timer = setTimeout(() => {
+      handleScrollToSection(scrollDirection)
+    }, 200);
+  }, [scrollDirection])
+
+  const handleScrollToSection = (direction) => {
+    const currentSectionIndex = sectionsIds.findIndex(section => section === currentSection)
+
+
+    if(direction === 'down' && currentSectionIndex < sectionsIds.length-1){
+      scroller.scrollTo(sectionsIds[currentSectionIndex + 1])
+      setCurrentSection(sectionsIds[currentSectionIndex + 1])
+      setScrollDirection(null)
+    }
+
+    if(direction === 'up' && currentSectionIndex > 0){
+      scroller.scrollTo(sectionsIds[currentSectionIndex - 1])
+      setCurrentSection(sectionsIds[currentSectionIndex - 1])
+      setScrollDirection(null)
+    }
+
+
+
+
+  }
 
   const changeSkillPage = () => {
     if (currentPage < totalPages) {
@@ -219,11 +279,14 @@ function App() {
   return (
     <main>
       <SocialNavigate />
-      <IndexNavigate />
+      <IndexNavigate setCurrentSection={setCurrentSection} />
       {loader && <Loader />}
-      <NavBar />
-      <header className="header container mx-auto">
-        <section className="home flex flex-col gap-12  px-7 fade-in justify-center">
+      <NavBar 
+        setCurrentSection={setCurrentSection}
+        currentSection={currentSection} 
+      />
+      <header  className="header container mx-auto">
+        <section className="home flex flex-col gap-12  px-7 fade-in justify-center ">
           <div className="logo flex justify-center items-center flex-col font-roboto font-bold ">
             <h1 className="pl-3.5 tracking-logo text-7xl sm:text-9xl text-secondary  dark:text-primary lg:tracking-logoLg focus-in-expand">
               [NOE]
@@ -240,10 +303,10 @@ function App() {
           </div>
 
           <span className="text-center sm:text-xl">
-            {randomQuote.quote}
+            {quote.quote}
             <br />
             <span className="text-secondary  dark:text-primary text-center">
-              - {randomQuote.author}
+              - {quote.author}
             </span>
           </span>
 
@@ -308,7 +371,7 @@ function App() {
         {/* EDUCATION */}
 
         <section className="section" id="education">
-          <h2 className="title">Educacion</h2>
+          <h2 className="title">Educación</h2>
           <div className="edu-main">
             <div className="education-container sm:w-2/3 sm:mx-auto lg:grid lg:grid-cols-2 lg:gap-6 xl:w-1/2">
               <Education
@@ -327,14 +390,14 @@ function App() {
               />
               <Education
                 logo={uesLogo}
-                title="Ingenieria en desarrollo de Software"
+                title="Ingeniería en desarrollo de Software"
                 date="En curso"
                 uesColor="brightness-0 dark:brightness-100"
                 url="https://www.ues.edu.sv/"
               />
               <Education
                 logo={uesLogo}
-                title="Ingenieria en sistemas"
+                title="Ingeniería en sistemas"
                 date="2020 - 2022"
                 uesColor="brightness-0 dark:brightness-100"
                 url="https://www.ues.edu.sv/"
@@ -374,6 +437,8 @@ function App() {
             <i className="bx bx-chevron-up bx-lg border rounded-full bg-black dark:bg-white text-white dark:text-black"></i>
           </a>
         </section>
+        
+  
       </header>
 
       <footer className="h-20 bg-footer flex justify-center items-center lg:hidden">
@@ -395,6 +460,7 @@ function App() {
         </a>
         </div>
       </footer>
+
     </main>
   );
 }
