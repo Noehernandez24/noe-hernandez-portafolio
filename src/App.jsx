@@ -310,7 +310,7 @@ function App() {
             </span>
           </span>
 
-          <ButtonNextSection section="about" />
+    
         </section>
 
         {/* ABOUT */}
@@ -338,7 +338,7 @@ function App() {
           </div>
 
           <ButtonDowload />
-          <ButtonNextSection section="skills" />
+   
         </section>
 
         {/* SKILLS */}
@@ -365,7 +365,6 @@ function App() {
             />
           </div>
 
-          <ButtonNextSection section="education" />
         </section>
 
         {/* EDUCATION */}
@@ -403,7 +402,7 @@ function App() {
                 url="https://www.ues.edu.sv/"
               />
             </div>
-            <ButtonNextSection section="proyects" />
+       
           </div>
         </section>
 
@@ -433,6 +432,7 @@ function App() {
           <a
             href={`#home`}
             className="down hidden sm:block text-center hover:scale-110 transition-transform w-10 mx-auto duration-500"
+            onClick={() => setCurrentSection('home')}
           >
             <i className="bx bx-chevron-up bx-lg border rounded-full bg-black dark:bg-white text-white dark:text-black"></i>
           </a>
