@@ -8,7 +8,7 @@ const SocialNavigate = () => {
         <i className='bx bxl-linkedin bx-md text-white dark:text-black bg-black dark:bg-white hover:bg-secondary dark:hover:bg-primary rounded-lg p-1'></i>
         </a>
         
-        <a href="https://github.com/Noehernandez24" target="_blank">
+        <a href="https://github.com/kreeptales" target="_blank">
         <i className='bx bxl-github bx-md text-white dark:text-black bg-black dark:bg-white hover:bg-secondary dark:hover:bg-primary rounded-lg p-1' ></i>
         </a>
 
